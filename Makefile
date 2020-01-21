@@ -6,7 +6,7 @@
 #    By: mel-omar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/18 21:19:54 by mel-omar          #+#    #+#              #
-#    Updated: 2020/01/18 21:42:24 by mel-omar         ###   ########.fr        #
+#    Updated: 2020/01/21 01:50:30 by mel-omar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ all:
 	@nasm -f macho64 ft_write.s -o ft_write.o
 	@nasm -f macho64 ft_read.s -o ft_read.o
 	@nasm -f macho64 ft_strdup.s -o ft_strdup.o
-	@ar rc $(NAME) ft_strcmp.o ft_strlen.o ft_write.o ft_read.o ft_strdup.o
+	@nasm -f macho64 ft_strcpy.s -o ft_strcpy.o
+	@ar rc $(NAME) ft_strcmp.o ft_strlen.o ft_write.o ft_read.o ft_strdup.o ft_strcpy.o
 	@ranlib $(NAME)
 clean:
 	@rm -f *.o
